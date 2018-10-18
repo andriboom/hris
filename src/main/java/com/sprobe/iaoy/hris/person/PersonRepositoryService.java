@@ -26,6 +26,16 @@ public class PersonRepositoryService {
     }
     //endregion
 
+    //region > deletePerson
+    public void deletePerson(
+            final Long id,
+            final Person personRequest) {
+        final Person person = findById(id);
+        basePersonRepository.delete(person);
+
+    }
+    //endregion
+
     //region > findByEmailAddress
     public Person findByEmailAddress(final String emailAddress) {
         return basePersonRepository.findByEmailAddress(emailAddress);
@@ -42,6 +52,20 @@ public class PersonRepositoryService {
     //region > findAll
     public Page<Person> findAll(final Pageable pageable) {
         return basePersonRepository.findAll(pageable);
+    }
+    //endregion
+
+    //region > updatePerson
+    public Person updatePerson(
+            final Long id,
+            final Person personRequest) {
+        final Person person = findById(id);
+        person.setFirstName(personRequest.getFirstName());
+        person.setLastName(personRequest.getLastName());
+        person.setEmailAddress(personRequest.getEmailAddress());
+        basePersonRepository.save(person);
+
+        return person;
     }
     //endregion
 
