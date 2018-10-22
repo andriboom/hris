@@ -39,4 +39,5 @@ export class UsersComponent implements OnInit {
       id: id
     };
     this.data.updateUser(person).subscribe();
+  } 
 }

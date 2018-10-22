@@ -1,5 +1,13 @@
 # Frontend
 
+Build project with:
+
+    $ npm run build
+
+Deploy to now:
+    
+    $ now
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5.
 
 ## Development server
