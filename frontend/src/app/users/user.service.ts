@@ -15,4 +15,8 @@ export class UserService {
       createUser(user) {
         return this.http.post('http://localhost:8080/person/create',user)
       }
+
+      updateUser(user) {
+        return this.http.post('http://localhost:8080/person/update/' + user.id,user)
+      }
 }

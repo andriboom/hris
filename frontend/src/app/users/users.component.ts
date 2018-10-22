@@ -10,9 +10,9 @@ import { Observable } from 'rxjs';
 export class UsersComponent implements OnInit {
 
   users$: Object;
-  public firstName: firstName = "";
-  public lastName: lastName = "";
-  public emailAddress: emailAddress = "";
+  firstName: string;
+  lastName: string;
+  emailAddress: string;
 
   constructor(private data: UserService) { }
 
@@ -31,4 +31,12 @@ export class UsersComponent implements OnInit {
     this.data.createUser(person).subscribe();
   }
 
+  updateUser(id) {
+    const person = {
+      firstName: this.firstName,
+      lastName: this.lastName,
+      emailAddress: this.emailAddress,
+      id: id
+    };
+    this.data.updateUser(person).subscribe();
 }
