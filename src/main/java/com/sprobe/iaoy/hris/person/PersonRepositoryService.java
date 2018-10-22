@@ -1,5 +1,7 @@
 package com.sprobe.iaoy.hris.person;
 
+import java.util.List;
+
 import com.sprobe.iaoy.hris.person.baspersonrepository.BasePersonRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,8 +52,8 @@ public class PersonRepositoryService {
     //endregion
 
     //region > findAll
-    public Page<Person> findAll(final Pageable pageable) {
-        return basePersonRepository.findAll(pageable);
+    public List<Person> findAll() {
+        return basePersonRepository.findAll();
     }
     //endregion
 

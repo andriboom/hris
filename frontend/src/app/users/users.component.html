@@ -1,0 +1,15 @@
+<h1>Users</h1>
+
+<ul>
+  <li *ngFor="let user of users$">
+      {{ user.firstName }}
+    <ul>
+      <li>{{ user.familyName }}</li>
+      <li>{{ user.emailAddress }}</li>
+    </ul>
+  </li>
+      <input type="text" name="First Name" [(ngModel)]="firstName">
+      <input type="text" name="Family Name" [(ngModel)]="lastName">
+      <input type="text" name="Email Address" [(ngModel)]="emailAddress">
+      <button (click)="createUser()" type="submit">Submit</button>
+</ul>

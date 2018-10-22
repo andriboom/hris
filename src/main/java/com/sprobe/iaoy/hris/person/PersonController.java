@@ -1,5 +1,7 @@
 package com.sprobe.iaoy.hris.person;
 
+import java.util.List;
+
 import javax.validation.Valid;
 import javax.xml.bind.ValidationException;
 
@@ -21,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "person")
+@CrossOrigin
 public class PersonController {
 
     //region > createPerson
@@ -48,10 +51,9 @@ public class PersonController {
 
     //region > findAll
     @GetMapping(value = "/")
-    @CrossOrigin(origins = "http://localhost:4200")
     @ResponseBody
-    public Page<Person> findAll(final Pageable pageable) {
-        return personRepositoryService.findAll(pageable);
+    public List<Person> findAll() {
+        return personRepositoryService.findAll();
     }
     //endregion
 
