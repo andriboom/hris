@@ -4,10 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "now-start": "serve ./dist/frontend --single"
+    
   },
   "private": true,
   "dependencies": {
@@ -24,6 +26,7 @@
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
     "rxjs": "~6.2.0",
+    "serve": "^10.0.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
